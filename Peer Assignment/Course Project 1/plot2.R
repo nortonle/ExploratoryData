@@ -21,12 +21,8 @@ actual_data$DayOfWeek <- format(actual_data$DateTime, "%a")
 
 ##ploting graph##
 Sys.setlocale("LC_ALL", "English") ##hey pal, make sure you and I have the same locale settings##
+plot(y=actual_data$Global_active_power, x=actual_data$DateTime, type = "line", ylab = "Global Active Power(Kilowatts)", xlab = "")
 
-plot(x = actual_data$DateTime, y = actual_data$Sub_metering_1, type = "l", col = "black", ylab = "Global Active Power(Kilowatts)", xlab = "")
-lines(x = actual_data$DateTime, y = actual_data$Sub_metering_2, col = "red")
-lines(x = actual_data$DateTime, y = actual_data$Sub_metering_3, col = "blue")
-legend(x="topright", y = 0.92, c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), lwd=c(3,3,3),col=c("black","red", "blue"))
-
-dev.copy(png, "plot3.png", width = 480, height = 480)
+dev.copy(png, "plot2.png", width = 480, height = 480)
 dev.off()
 ##end of plotting
