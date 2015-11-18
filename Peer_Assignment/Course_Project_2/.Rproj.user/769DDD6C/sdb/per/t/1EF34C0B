@@ -1,0 +1,18 @@
+{
+    "contents" : "library(dplyr)\n##---------------------------------------------------------##\nNEI <- readRDS(\"data/summarySCC_PM25.rds\")\nSCC <- readRDS(\"data/Source_Classification_Code.rds\")\n##---------------------------------------------------------##\nsum_year <- filter(NEI, fips == \"24510\") %>%\n  group_by(year) %>%\n  summarise(sum = sum(Emissions))\n##---------------------------------------------------------##\nwith(sum_year, barplot(height = sum, width = year, xlab = \"Year\", ylab = \"Total Emissions\", main = \"Total PM 2.5 emissions from all Baltimore sources\"))\n##---------------------------------------------------------##\ndev.copy(png, \"plot2.png\")\ndev.off()",
+    "created" : 1447783710203.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "364030569",
+    "id" : "1EF34C0B",
+    "lastKnownWriteTime" : 1447784855,
+    "path" : "G:/git/Exploratory Data analysis/Peer_Assignment/Course_Project_2/plot2.R",
+    "project_path" : "plot2.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
